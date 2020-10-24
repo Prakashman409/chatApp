@@ -1,13 +1,16 @@
 const express=require('express');
-const dotenv=require('dotenv');
+const socketIo=require('socket.io');
+const http=require('http');
 const app=express();
 
-const port=process.env.PORT||8000;
 
+const port=process.env.PORT||8000;
+let server=http.createServer(app);
+let io=socketIo(server); 
 app.get('/',(req,res)=>{
-    res.send('balla balla vayo mula');
+  res.sendFile('index.html',{root:'public'});
 })
 
-app.listen(port,()=>{
+server.listen(port,()=>{
     console.log(`server is successfully running in port: ${port}`);
 });
