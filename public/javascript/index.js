@@ -8,7 +8,7 @@ socket.on('newMessage',(message)=>{
 }) 
 
 socket.on('sendLocationServer',(message)=>{
-    console.log(message.latitude);
+   
    $('#body').append(`<a href="https://www.google.com/maps?q=${message.latitude},${message.longitude}" target="_blank">this is my location<a></br>`);
 
 });
