@@ -1,0 +1,106 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal Chat</title>
+    <script src="/socket.io/socket.io.js"></script>
+  
+    <script src="../javascript/lib/moment.js"></script>
+    <script src="../javascript/lib/mustache.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="../javascript/index.js"></script>
+   
+</head>
+
+<body>
+    <div class="container-fluid h-100">
+
+        <div class="row">
+            <div class="col-lg-4">
+
+                <div class="card mt-5 ml-5" style="width: 20rem; height: 40rem;">
+
+                    <div class="card-header">
+
+                        <h3>People</h3>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-8 ml-0">
+
+                <div class="card mt-5 ml-0" style="width: 40rem; height: 40rem;">
+
+                    <div class="card-header">
+                        <h3>Online</h3>
+                    </div>
+                    <div class="card-body chat-body" id="chat-scroll">
+                      
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-footer">
+                            <form action="" class=" form-inline">
+                                <input type="text" class="form-control m-0 " id="chatMessage" style="width: 22rem;" placeholder="type to send">
+                                <button type="submit" class="btn btn-primary ml-2 " id="send-btn" >Send</button>
+                                
+                            </form>
+                            <button type="submit" class="btn btn-primary ml-2" id="send-location">LocateMe</button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script class="message-template" type="text/template">
+
+     <h4>{{from}}</h4>
+        <span>{{createdAt}}</span>:{{text}}   
+   </script>
+   
+    <script type="text/template" id="geo-location">
+       <h4>{{from}}</h4><span>{{createdAt}}</span>:
+       
+          <a href="{{url}}" target="_blank">This my location</a>
+    
+</script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

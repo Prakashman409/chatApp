@@ -1,0 +1,12 @@
+
+
+ body{
+     display: grid;
+     place-items: center;
+     background: linear-gradient(to right,	#00ffff,	#00bfff);
+ }
+ .chat-body{
+     overflow-y: scroll;
+ }
+
+ 

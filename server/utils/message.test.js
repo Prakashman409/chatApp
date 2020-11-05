@@ -1,5 +1,5 @@
 let expect=require('expect');
-let messageGenerator=require('./messageGenerator');
+let {messageGenerator,generateLocation}=require('./messageGenerator');
 
 describe('Generate Message',()=>{
     it('it should generate correct message object',()=>{
@@ -11,3 +11,14 @@ describe('Generate Message',()=>{
         expect(message).toMatchObject({from,text});
     });
 });
+
+describe('Generate Location',()=>{
+    it('it should generate correct location',()=>{
+        let lat=28;
+        let long=33
+        let url=`https://www.google.com/maps?q=${lat},${long}`
+        let location=generateLocation(lat,long);
+        expect(typeof location.createdAt).toBe('number');
+        expect(location).toMatchObject({lat,long});
+    })
+})
